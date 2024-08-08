@@ -12,6 +12,8 @@ final useCaseProvider = Provider.autoDispose<PhotosUseCase>((ref){
   final repository = ref.watch(photosRepositoryProvider);
   return PhotosUseCaseImpl(repository: repository);
 });
+
+
 final photosRepositoryProvider = Provider.autoDispose<PhotosRepository>((ref){
   final dataSource = ref.watch(photosDataSource);
   return PhotosRepositoryImpl(dataSource: dataSource);
